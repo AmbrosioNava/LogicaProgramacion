@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 	function saltarLinea() {
-		document.write("<br><br><br>")
+		document.write("<br><br><br>");
 	}
 
 	function imprimir(frase) {
@@ -23,5 +23,21 @@
 	var imcCalculado = calcularImc(peso, altura);
 
 	imprimir("El imc calculado de "+ nombre +" es: " + imcCalculado);
+
+	if(imcCalculado < 18.5) {
+		imprimir("Imc Abajo de lo recomendado")
+	}
+
+	if(imcCalculado >= 18.5 && imcCalculado < 25) {
+		imprimir("El imc está dentro del intervalo normal")
+	}
+
+	if(imcCalculado >= 25 && imcCalculado < 30) {
+		imprimir("El imc está considerado como PreObesidad")
+	}
+
+	if(imcCalculado >= 30) {
+		imprimir("Imc considerado como Obesidad")
+	}
 
 </script>

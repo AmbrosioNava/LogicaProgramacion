@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA - JUEGO DE ADIVINAR</h1>
+
+<script type="text/javascript">
+	function saltarLinea() {
+		document.write("<br><br><br>");
+	}
+
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	}
+
+	function numeroMayorMenor(numeroRecibido, numeroPensado, intento) {
+		if(numeroRecibido < numeroPensado) {
+			imprimir("El numero pensado es mayor, el numero que ingresaste es: " + numeroRecibido);
+		}else if(numeroRecibido > numeroPensado){
+			imprimir("El numero pensado es menor, el numero que ingresaste es: " + numeroRecibido);
+		}
+
+		if(intento == 3) {
+			imprimir("El numero pensado era: " + numeroPensado);
+		}
+	}
+
+	var rangoNumero = parseInt(prompt("Ingresa un numero para el rango del juego"))
+	var numeroPensado = Math.round(Math.random() * rangoNumero);
+	
+
+	var intentos  = 3;
+	var contador = 1;
+
+
+	while(contador <= intentos){
+		var numeroRecibido = parseInt(prompt("Ingrese un numero entre 0 y " + rangoNumero));
+		if(numeroPensado == numeroRecibido) {
+			imprimir("El numero ingresado es correcto, acertó en el intento  #" + contador + ", el numero fue: " + numeroPensado);
+			break;
+		} else {
+			numeroMayorMenor(numeroRecibido, numeroPensado, contador);
+		}
+		contador++;
+	}
+
+</script>
